@@ -31,10 +31,16 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // LISTAR - GET
 Route::get('/categoria', [CategoriaController::class, 'index'])->name('categoria.index');
 
-// SHOW - GET
-Route::get('/categoria/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
 
 // CREATE GET / STORE POST
+//create
+Route::get('/categoria/create', [CategoriaController::class, 'create'])->name('categoria.create');
+
+//store
+Route::post('/categoria/create', [CategoriaController::class, 'store'])->name('categoria.store');
+
+// SHOW - GET
+Route::get('/categoria/{id}', [CategoriaController::class, 'show'])->name('categoria.show');
 
 
 //EDIT GET / UPDATE PUT

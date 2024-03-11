@@ -11,9 +11,10 @@
 
                     <strong>Nome:</strong>          {{ $categoria->nome }}<br>
                     <strong>Criação:</strong>       {{ $categoria->created_at }}<br>
-                    <strong>Atualização:</strong>    {{ $categoria->updated_at }}<br>
+                    <strong>Atualização:</strong>   {{ $categoria->updated_at }}<br>
 
                 </div>
+
             </div>
         </div>
     </div>

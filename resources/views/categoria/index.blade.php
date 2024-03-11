@@ -9,6 +9,15 @@
 
                 <div class="card-body">
 
+                     @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <a class="btn btn-success" href="{{ url('/categoria/create') }}" role="button">CRIAR</a>
+
+
                     <table class="table">
                         <thead>
                           <tr>
@@ -20,15 +29,15 @@
 
                         <tbody>
 
-                            @foreach ($categorias as $value)
+                                    @foreach ($categorias as $value)
 
-                          <tr>
-                            <th scope="row">{{ $value->id }}</th>
-                            <td>{{ $value->nome }}</td>
-                            <td><a class="btn btn-primary" href="{{ url('/categoria/' . $value->id) }}" role="button">Visualizar</a></td>
-                          </tr>
+                                <tr>
+                                    <th scope="row">{{ $value->id }}</th>
+                                    <td>{{ $value->nome }}</td>
+                                    <td><a class="btn btn-primary" href="{{ url('/categoria/' . $value->id) }}" role="button">Visualizar</a></td>
+                                </tr>
 
-                            @endforeach
+                                    @endforeach
 
                         </tbody>
                       </table>
