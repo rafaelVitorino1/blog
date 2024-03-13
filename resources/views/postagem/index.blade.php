@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categoria</div>
+                <div class="card-header">Postagem</div>
 
                 <div class="card-body">
 
@@ -15,29 +15,31 @@
                         </div>
                     @endif
 
-                    <a class="btn btn-success" href="{{ url('/categoria/create') }}" role="button">CRIAR</a>
+                    <a class="btn btn-success" href="{{ url('/postagem/create') }}" role="button">CRIAR</a>
 
 
                     <table class="table">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nome</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Titulo</th>
                             <th scope="col"></th>
                           </tr>
                         </thead>
 
                         <tbody>
 
-                                    @foreach ($categorias as $value)
+                                    @foreach ($postagens as $value)
 
                                 <tr>
                                     <th scope="row">{{ $value->id }}</th>
-                                    <td>{{ $value->nome }}</td>
-                                    <td><a class="btn btn-primary" href="{{ url('/categoria/' . $value->id) }}" role="button">Visualizar</a></td>
-                                    <td><a class="btn btn-warning" href="{{ url('/categoria/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                                    <td>{{ $value->categoria->nome }}</td>
+                                    <td>{{ $value->titulo }}</td>
+                                    <td><a class="btn btn-primary" href="{{ url('/postagem/' . $value->id) }}" role="button">Visualizar</a></td>
+                                    <td><a class="btn btn-warning" href="{{ url('/postagem/' . $value->id . '/edit') }}" role="button">Editar</a></td>
                                     <td>
-                                    <form method="POST" action={{ url('/categoria/' . $value->id) }}>
+                                    <form method="POST" action={{ url('/postagem/' . $value->id) }}>
                                         @csrf
                                         @method('DELETE')
 

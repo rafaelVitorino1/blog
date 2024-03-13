@@ -290,6 +290,7 @@ return [
     */
 
     'menu' => [
+        // Navbar items:
         [
             'text' => 'Principal',
             'url'  => 'home',
@@ -300,7 +301,13 @@ return [
             'url'  => 'categoria',
             'icon' => 'fas fa-fw fa-user',
         ],
-        // Navbar items:
+
+        [
+            'text' => 'Postagem',
+            'url'  => 'postagem',
+            'icon' => 'fas fa-fw fa-user',
+        ],
+
         [
             'type'         => 'navbar-search',
             'text'         => 'search',
